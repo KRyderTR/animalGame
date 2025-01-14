@@ -1,0 +1,86 @@
+.animalCardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: rgba(0, 0, 0, 15%);
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+}
+
+/* Make the image same height also */
+.animalImg {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+}
+
+.options {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.answerButtonContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.answerBtn {
+  flex-grow: 1;
+  border: none;
+  background-color: hsla(180, 100%, 100%, 0.584);
+  border-radius: 5px 0 0 5px;
+}
+
+.answerBtnText {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: hsla(0, 0%, 0%, 0.8);
+}
+
+.soundBtn {  
+  flex-shrink: 0;
+  width: 20%;
+  padding: 5px 0;
+  border: none;
+  background-color: hsla(0, 0%, 100%, 0.808);
+  border-radius: 0 5px 5px 0;
+}
+
+.soundImg {
+  width: 40px;
+}
+
+/* Tablet (iPad) and larger screens */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .animalCardContainer {
+        flex-direction: column;
+        max-width: 600px;
+    }
+}
+
+/* Desktop screens */
+@media (min-width: 1024px) {
+    .animalCardContainer {
+        flex-direction: row;
+        max-width: 1000px;
+    }
+
+    .options {
+        height: 100%;
+        justify-content: space-evenly;
+        gap: 20px;
+    }
+
+    .animalImg {
+        width: 50%;;
+    }
+
+    .answerButtonContainer {
+        flex-grow: 1;
+    }
+}

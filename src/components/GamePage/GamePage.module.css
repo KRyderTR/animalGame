@@ -1,15 +1,29 @@
-.gamePage{
+.gamePage {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     height: 100vh;
+    padding-bottom: 15%;
 }
 
-.animalCardContainer {
-    background-color: rgba(0 , 0, 0, 15%);
-    border: none;
-    border-radius: 10px;
-    padding: 30px;
+.score {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+/* Tablet (iPad) and larger screens */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .gamePage {
+        padding-bottom: 0;
+    }
+}
+
+/* Desktop screens */
+@media (min-width: 1024px) {
+    .gamePage {
+        padding-bottom: 0;
+    }
 }

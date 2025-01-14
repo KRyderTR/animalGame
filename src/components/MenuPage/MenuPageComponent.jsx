@@ -1,12 +1,19 @@
-import { Link } from "react-router-dom";
+import MenuButtonComponent from "../MenuButton/MenuButtonComponent";
+import styles from "./MenuPage.module.css";
 
 const MenuPageComponent = () => {
   return (
-    <div className="menu-page">
-      <h1>Animal Quiz Game</h1>
-      <button>
-        <Link to="/game">Start Game</Link>
-      </button>
+    <div className={styles.menuPage}>
+      <div className={styles.titleContainer}>
+        <h1>Animal Quiz Game</h1>
+      </div>
+      <div className={styles.menuContainer}>
+        <div className={styles.menuBtnsContainer}>
+          <MenuButtonComponent to="/animalGame/game" label="Start Game" />
+          <MenuButtonComponent to="/animalGame/howToPlay" label="How to Play" />
+          <MenuButtonComponent to="/animalGame/about" label="About" />
+        </div>
+      </div>
     </div>
   );
 };

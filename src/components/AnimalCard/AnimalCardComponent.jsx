@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import soundIcon from "../../assets/images/sound-icon1.png";
+import styles from "./AnimalCard.module.css";
 
 const AnimalCardComponent = ({ animal, options, handleAnswer }) => {
   const playAnimalSound = (animalName) => {
@@ -9,22 +10,22 @@ const AnimalCardComponent = ({ animal, options, handleAnswer }) => {
   };
 
   return (
-    <div className="animal-card">
-      <img src={animal.image} width="300" alt={animal.name} className="animal-image" />
-      <div className="options">
+    <div className={styles.animalCardContainer}>
+      <img src={animal.image} className={styles.animalImg} alt={animal.name}/>
+      <div className={styles.options}>
         {options.map((option, index) => (
-          <div key={index} className="answer-button-container">
+          <div key={index} className={styles.answerButtonContainer}>
             <button
-              className="answer-button"
+              className={styles.answerBtn}
               onClick={() => handleAnswer(option)}
             >
-              <span className="answer-button-text">{option}</span>
+              <span className={styles.answerBtnText}>{option}</span>
             </button>
             <button
-              className="sound-button"
+              className={styles.soundBtn}
               onClick={() => playAnimalSound(option)} // Call the function on click
             >
-              <img src={soundIcon} width="30" className="sound-icon" alt="sound icon" />
+              <img src={soundIcon} className={styles.soundImg} alt="sound icon" />
             </button>
           </div>
         ))}

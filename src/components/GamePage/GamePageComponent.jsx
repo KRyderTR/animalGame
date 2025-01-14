@@ -5,7 +5,7 @@ import { animals as originalAnimals } from "../../data/animals.js";
 
 const shuffleArray = (array) => array.sort(() => Math.random() - 0.5);
 
-const GamePage = () => {
+const GamePageComponent = () => {
   const [shuffledAnimals, setShuffledAnimals] = useState(
     shuffleArray([...originalAnimals])
   );
@@ -53,16 +53,14 @@ const GamePage = () => {
 
   return (
     <div className={styles.gamePage}>
-      <div className={styles.animalCardContainer}>
-        <h2>Score: {score}</h2>
-        <AnimalCard
-          animal={currentAnimal}
-          options={options}
-          handleAnswer={handleAnswer}
-        />
-      </div>
+      <h2 className={styles.score}>Score: {score}</h2>
+      <AnimalCard
+        animal={currentAnimal}
+        options={options}
+        handleAnswer={handleAnswer}
+      />
     </div>
   );
 };
 
-export default GamePage;
+export default GamePageComponent;
