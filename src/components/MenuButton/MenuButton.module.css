@@ -1,33 +1,38 @@
 .menuButton {
-    width: 100%;
-    font-size: 1.7rem;
-    padding: 10px 0; 
-    border: none;
-    border-radius: 5px;
-    background-color: rgba(36, 36, 36, 0.863);
+  font-family: inherit;
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 15px 0;
+  border-radius: 11px;
+  border: none;
+  background-color: rgba(236, 22, 72, 0.555);
+  color: rgb(224, 224, 224);
 }
-  
-  .menuButton:hover {
-    background-color: #141414;
-  }
-  
-  .menuButton a {
-    text-decoration: none;
-    color: rgba(192, 192, 192, 0.93);
-    font-weight: bold;
-  }
 
-  /* Tablet (iPad) and larger screens */
+.menuButton:hover {
+  background-color: rgba(236, 22, 72, 0.372);
+}
+
+/* Tablet (iPad) and larger screens */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .menuButton {
-    font-size: 1.5rem;
-  }
+
 }
 
 /* Desktop screens */
 @media (min-width: 1024px) {
+
+}
+
+/* Base mobile-first styles */
+
+/* Landscape view adjustments */
+@media screen and (max-width: 768px) and (orientation: landscape) {
   .menuButton {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
-  
+
+/* General larger device landscape adjustments (optional) */
+@media screen and (min-width: 769px) and (orientation: landscape) {
+
+}

@@ -5,7 +5,7 @@ import styles from "./AnimalCard.module.css";
 const AnimalCardComponent = ({ animal, options, handleAnswer }) => {
   const playAnimalSound = (animalName) => {
     const utterance = new SpeechSynthesisUtterance(animalName);
-    utterance.lang = "en-US"; // Specify language (English in this case)
+    utterance.lang = "en-US"; // Specify language
     window.speechSynthesis.speak(utterance);
   };
 
