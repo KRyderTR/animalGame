@@ -1,10 +1,143 @@
 .infoPageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
   padding: 20px;
+  height: 95vh;
+}
+
+.textContainer {
+  flex-grow: 1;
+  /* background-color: rgba(127, 255, 212, 0.317); */
+}
+
+.textContainer h1 {
+  margin-top: 1.5rem;
+  font-size: 2.5rem;
+  color: rgba(46, 46, 46, 0.947);
+}
+
+.textContainer p {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.imageContainer {
+  /* background-color: rgba(222, 215, 250, 0.425); */
 }
 
 .infoImage {
-  max-width: 100%;
+  width: 80%;
   height: auto;
-  margin-top: 20px;
+}
+
+/* Mobile-landscape view styles */
+
+/* Landscape view adjustments */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+ 
+  .infoPageContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10%;
+    height: 100vh;
+  }
+
+  .textContainer {
+    width: 50%;
+  }
+
+  .textContainer p {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .imageContainer {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+
+  .infoImage {
+    width: 100%;
+    margin-bottom: 10px;
+    height: auto;
+  }
+}
+
+/* General larger device landscape adjustments (optional) */
+@media screen and (min-width: 769px) and (orientation: landscape) {
+  
+  .infoPageContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10%;
+    height: 100vh;
+  }
+
+  .textContainer {
+    width: 60%;
+  }
+
+  .imageContainer {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+
+  .infoImage {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+}
+
+/* Tablet and PC screens */
+
+/* Tablet (iPad) and larger screens */
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  .infoPageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 95vh;
+  }
+
+  .textContainer {
+    flex-grow: 1;
+    width: 80%;
+    padding-top: 5%;
+  }
+
+  .textContainer h1 {
+    font-size: 4rem;
+    color: rgba(46, 46, 46, 0.947);
+  }
+
+  .textContainer p {
+    font-size: 1.7rem;
+  }
+
+  .infoImage {
+    width: 60%;
+    height: auto;
+  }
+
+}
+
+/* Desktop screens */
+@media (min-width: 1025px) {
+  .textContainer {
+    flex-grow: 0;
+    width: 80%;
+    padding-top: 3%;
+    padding-left: 4%;
+  }
 }

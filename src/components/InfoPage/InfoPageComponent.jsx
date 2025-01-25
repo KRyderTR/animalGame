@@ -6,9 +6,13 @@ const InfoPageComponent = ({ data }) => {
 
   return (
     <div className={styles.infoPageContainer}>
-      <h1>{title}</h1>
-      <p>{text}</p>
-      <img src={image} className={styles.infoImage} alt={title} />
+      <div className={styles.textContainer}>
+        <h1>{title}</h1>
+        <p>{text}</p>
+      </div>
+      <div className={styles.imageContainer}>
+        <img src={image} className={styles.infoImage} alt={title} />
+      </div>
     </div>
   );
 };

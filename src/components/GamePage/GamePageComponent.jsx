@@ -1,13 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AnimalCard from "../AnimalCard/AnimalCardComponent";
 import styles from "./GamePage.module.css";
 import { animals as originalAnimals } from "../../data/animals.js";
 import correctSound from "../../assets/sounds/correct-sound.mp3";
 import mistakeSound from "../../assets/sounds/game-over-sound.mp3";
 
+
 const shuffleArray = (array) => array.sort(() => Math.random() - 0.5);
 
+const preloadImages = (imagePaths) => {
+  imagePaths.forEach((path) => {
+    const img = new Image();
+    img.src = path;
+  });
+};
+
+
 const GamePageComponent = () => {
+  useEffect(() => {
+    // Preload all animal images when the component mounts
+    preloadImages(originalAnimals.map((animal) => animal.image));
+  }, []);
+
   const [shuffledAnimals, setShuffledAnimals] = useState(
     shuffleArray([...originalAnimals])
   );

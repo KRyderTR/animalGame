@@ -1,8 +1,11 @@
+import { useState } from "react";
 import PropTypes from "prop-types";
 import soundIcon from "../../assets/images/sound-icon1.png";
 import styles from "./AnimalCard.module.css";
 
 const AnimalCardComponent = ({ animal, options, handleAnswer }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   const playAnimalSound = (animalName) => {
     const utterance = new SpeechSynthesisUtterance(animalName);
     utterance.lang = "en-US"; // Specify language
@@ -11,7 +14,14 @@ const AnimalCardComponent = ({ animal, options, handleAnswer }) => {
 
   return (
     <div className={styles.animalCardContainer}>
-      <img src={animal.image} className={styles.animalImg} alt={animal.name}/>
+      {!isLoaded && <div className={styles.skeleton}>Loading...</div>}
+      <img
+        src={animal.image}
+        className={styles.animalImg}
+        alt={animal.name}
+        onLoad={() => setIsLoaded(true)}
+        style={{ display: isLoaded ? "block" : "none" }}
+      />
       <div className={styles.options}>
         {options.map((option, index) => (
           <div key={index} className={styles.answerButtonContainer}>
@@ -25,7 +35,11 @@ const AnimalCardComponent = ({ animal, options, handleAnswer }) => {
               className={styles.soundBtn}
               onClick={() => playAnimalSound(option)} // Call the function on click
             >
-              <img src={soundIcon} className={styles.soundImg} alt="sound icon" />
+              <img
+                src={soundIcon}
+                className={styles.soundImg}
+                alt="sound icon"
+              />
             </button>
           </div>
         ))}

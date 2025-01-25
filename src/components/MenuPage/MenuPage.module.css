@@ -2,8 +2,9 @@
   font-family: inherit;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  gap: 30px;
   height: 100vh;
 }
 
@@ -45,7 +46,8 @@
 @media (min-width: 768px) and (max-width: 1024px) {
   .menuPage {
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 20px;
   }
 
   .menuContainer {
