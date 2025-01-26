@@ -2,7 +2,7 @@
   font-family: inherit;
   width: 100%;
   font-size: 1.5rem;
-  padding: 15px 0;
+  padding: 10px 0;
   border-radius: 11px;
   border: none;
   background-color: rgba(236, 22, 72, 0.555);
@@ -13,26 +13,26 @@
   background-color: rgba(236, 22, 72, 0.372);
 }
 
-/* Tablet (iPad) and larger screens */
-@media (min-width: 768px) and (max-width: 1024px) {
 
+/* ||  MQ  || */
+
+/* || TABLET  */
+@media screen and (min-width: 768px) {
+  .menuButton {
+    font-size: 1.5rem;
+  }
 }
 
-/* Desktop screens */
-@media (min-width: 1024px) {
-
-}
-
-/* Base mobile-first styles */
-
-/* Landscape view adjustments */
-@media screen and (max-width: 768px) and (orientation: landscape) {
+/* || PC  */
+@media screen and (min-width: 1024px) {
   .menuButton {
     font-size: 1.2rem;
   }
 }
 
-/* General larger device landscape adjustments (optional) */
-@media screen and (min-width: 769px) and (orientation: landscape) {
-
+/* || MOBILE LANDSCAPE  */
+@media screen and (max-height: 430px) and (min-aspect-ratio: 7/4) {
+  .menuButton {
+    font-size: 1rem;
+  }
 }

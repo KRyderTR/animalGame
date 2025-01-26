@@ -38,7 +38,7 @@
 }
 
 .answerBtnText {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: bold;
   color: hsla(0, 0%, 0%, 0.8);
 }
@@ -64,7 +64,6 @@
   background-color: rgba(236, 236, 236, 0.8);
 }
 
-
 .skeleton {
   background: #eee;
   height: 200px;
@@ -82,20 +81,21 @@
 }
 
 
+/* ||  MQ  || */
 
-/* Tablet (iPad) and larger screens */
-@media (min-width: 768px) and (max-width: 1024px) {
+/* || TABLET  */
+@media screen and (min-width: 768px) {
   .animalCardContainer {
     flex-direction: column;
     max-width: 600px;
   }
 }
 
-/* Desktop screens */
-@media (min-width: 1024px) {
+/* || PC  */
+@media screen and (min-width: 1024px) {
   .animalCardContainer {
     flex-direction: row;
-    max-width: 1000px;
+    max-width: 800px;
   }
 
   .options {
@@ -113,15 +113,13 @@
   }
 }
 
-/* Mobile-landscape view styles */
-
-/* Landscape view adjustments */
-@media screen and (max-width: 768px) and (orientation: landscape) {
+/* || MOBILE LANDSCAPE  */
+@media screen and (max-height: 430px) and (min-aspect-ratio: 7/4) {
   .animalCardContainer {
     flex-direction: row;
-    width: 75%;
-    height: 70%;
-    max-width: 1000px;
+    width: 70%;
+    height: 55%;
+    max-width: 800px;
     max-height: 300px;
   }
 
@@ -146,49 +144,10 @@
   }
 
   .answerBtnText {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .soundImg {
-    width: 30px;
-  }
-}
-
-/* General larger device landscape adjustments (optional) */
-@media screen and (min-width: 769px) and (orientation: landscape) {
-  .animalCardContainer {
-    flex-direction: row;
-    width: 75%;
-    height: 65%;
-    max-width: 1000px;
-    max-height: 300px;
-  }
-
-  .options {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: 5px;
-  }
-
-  .animalImg {
-    width: 55%;
-  }
-
-  .answerButtonContainer {
-    height: 100%;
-  }
-
-  .answerBtn {
-    flex-grow: 1;
-  }
-
-  .answerBtnText {
-    font-size: 1.3rem;
-  }
-
-  .soundImg {
-    width: 30px;
+    width: min(50%, 30px);
   }
 }

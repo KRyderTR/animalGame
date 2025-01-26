@@ -2,19 +2,18 @@
   font-family: inherit;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   gap: 30px;
   height: 100vh;
 }
 
 .titleContainer {
-  width: 90%;
-  max-width: 350px;
+  width: min(75%, 300px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 20%;
 }
 
 .menuLogo {
@@ -22,15 +21,14 @@
 }
 
 .menuContainer {
-  width: 90%;
-  height: 35%;
+  width: 100%;
+  height: min(35%, 250px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: rgba(216, 217, 217, 0.167);
   max-width: 500px;
-  border-radius: 15px;
 }
 
 .menuBtnsContainer {
@@ -42,29 +40,31 @@
   gap: 10px;
 }
 
-/* Tablet (iPad) and larger screens */
-@media (min-width: 768px) and (max-width: 1024px) {
+
+/* ||  MQ  || */
+
+/* || TABLET  */
+@media screen and (min-width: 768px) {
   .menuPage {
     flex-direction: column;
     justify-content: center;
     gap: 20px;
   }
 
-  .menuContainer {
+  .titleContainer {
     width: 60%;
-    height: 40%;
-    max-width: 500px;
-    max-height: 400px;
+    max-width: 450px;
+    margin-top: 0;
   }
 
-  .titleContainer {
-    width: 70%;
-    max-width: 600px;
+  .menuContainer {
+    width: min(60%, 500px);
+    height: min(30%, 350px);
   }
 }
 
-/* Desktop screens */
-@media (min-width: 1024px) {
+/* || PC  */
+@media screen and (min-width: 1024px) {
   .menuPage {
     flex-direction: row-reverse;
     justify-content: space-evenly;
@@ -80,14 +80,12 @@
   .titleContainer {
     width: 40%;
     height: 80%;
-    max-width: 700px;
+    max-width: 500px;
   }
 }
 
-/* Mobile-landscape view styles */
-
-/* Landscape view adjustments */
-@media screen and (max-width: 768px) and (orientation: landscape) {
+/* || MOBILE LANDSCAPE  */
+@media screen and (max-height: 430px) and (min-aspect-ratio: 7/4) {
   .menuPage {
     flex-direction: row-reverse;
     justify-content: space-evenly;
@@ -95,35 +93,13 @@
 
   .menuContainer {
     width: 40%;
-    height: 70%;
+    height: 55%;
     max-width: 400px;
-    max-height: 600px;
+    max-height: 300px;
   }
 
   .titleContainer {
-    width: 40%;
-    height: 80%;
-    max-width: 700px;
-  }
-}
-
-/* General larger device landscape adjustments (optional) */
-@media screen and (min-width: 769px) and (orientation: landscape) {
-  .menuPage {
-    flex-direction: row-reverse;
-    justify-content: space-evenly;
-  }
-
-  .menuContainer {
-    width: 40%;
-    height: 70%;
-    max-width: 400px;
-    max-height: 600px;
-  }
-
-  .titleContainer {
-    width: 35%;
-    height: 80%;
-    max-width: 600px;
+    width: min(35%, 250px);
+    height: auto;
   }
 }

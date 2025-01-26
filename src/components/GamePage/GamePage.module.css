@@ -77,31 +77,31 @@
   background-color: rgba(207, 207, 207, 0.56);
 }
 
-/* Tablet (iPad) and larger screens */
-@media (min-width: 768px) and (max-width: 1024px) {
+
+/* ||  MQ  || */
+
+/* || TABLET  */
+@media screen and (min-width: 768px) {
   .gamePage {
     padding-bottom: 0;
   }
 }
 
-/* Desktop screens */
-@media (min-width: 1024px) {
+/* || PC  */
+@media screen and (min-width: 1024px) {
   .gamePage {
     padding-bottom: 0;
   }
+
+  .score {
+    font-size: 1.5rem;
+  }
 }
 
-/* Mobile-landscape view styles */
-
-/* Landscape view adjustments */
-@media screen and (max-width: 768px) and (orientation: landscape) {
+/* || MOBILE LANDSCAPE  */
+@media screen and (max-height: 430px) and (min-aspect-ratio: 7/4) {
   .gamePage {
     padding-bottom: 5%;
   }
-}
-
-/* General larger device landscape adjustments (optional) */
-@media screen and (min-width: 769px) and (orientation: landscape) {
-
 }
 
