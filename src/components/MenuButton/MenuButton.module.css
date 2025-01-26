@@ -7,6 +7,7 @@
   border: none;
   background-color: rgba(236, 22, 72, 0.555);
   color: rgb(224, 224, 224);
+  cursor: pointer;
 }
 
 .menuButton:hover {

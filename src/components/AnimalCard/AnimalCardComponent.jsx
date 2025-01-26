@@ -3,7 +3,12 @@ import PropTypes from "prop-types";
 import soundIcon from "../../assets/images/sound-icon1.png";
 import styles from "./AnimalCard.module.css";
 
-const AnimalCardComponent = ({ animal, options, handleAnswer }) => {
+const AnimalCardComponent = ({
+  animal,
+  options,
+  handleAnswer,
+  highlightedButton,
+}) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const playAnimalSound = (animalName) => {
@@ -26,7 +31,9 @@ const AnimalCardComponent = ({ animal, options, handleAnswer }) => {
         {options.map((option, index) => (
           <div key={index} className={styles.answerButtonContainer}>
             <button
-              className={styles.answerBtn}
+              className={`${styles.answerBtn} ${
+                option === highlightedButton ? styles.correctButton : ""
+              }`} // Add class for highlighted button
               onClick={() => handleAnswer(option)}
             >
               <span className={styles.answerBtnText}>{option}</span>
@@ -56,6 +63,7 @@ AnimalCardComponent.propTypes = {
   }).isRequired,
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
   handleAnswer: PropTypes.func.isRequired,
+  highlightedButton: PropTypes.string, // Add highlightedButton prop validation
 };
 
 export default AnimalCardComponent;
